@@ -1,4 +1,6 @@
-All the spells from [https://twitter.com/nusco](Paolo Perrotta's) *[http://pragprog.com/book/ppmetr/metaprogramming-ruby](Metaprogramming Ruby)*.
+Metaprogramming Spells
+===========
+All the spells from <a href="https://twitter.com/nusco">Paolo Perrotta's</a> <i><a href="http://pragprog.com/book/ppmetr/metaprogramming-ruby">Metaprogramming Ruby</a></i>.
 
 ### Argument Array
 Collapse a list of arguments into an array.
