@@ -6,7 +6,6 @@ All the spells from <a href="https://twitter.com/nusco">Paolo Perrotta's</a> <i>
   * <a href="#blank-slate">Blank Slate</a>
   * <a href="#class-extension">Class Extension</a>
   * <a href="#class-extension-mixin">Class Extension Mixin</a>
-  
 <a name="argument-array"></a>
 ### Argument Array
 Collapse a list of arguments into an array.
@@ -65,6 +64,29 @@ module M
 end
 
 class << C
+  include M
+end
+
+C.my_method #=> "a class method"
+```
+
+<a name="class-extension-mixin"></a>
+### Class Extension Mixin
+Enable a module to extend it's includer through a <a href="#hook-method">Hook Method</a>.
+```ruby
+module M
+  def self.included(base)
+    base.extend(ClassMethods)
+  end
+  
+  module ClassMethods
+    def my_method
+      'a class method'
+    end
+  end
+end
+
+class C
   include M
 end
 
