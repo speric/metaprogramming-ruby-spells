@@ -6,6 +6,7 @@ All the spells from <a href="https://twitter.com/nusco">Paolo Perrotta's</a> <i>
   * <a href="#blank-slate">Blank Slate</a>
   * <a href="#class-extension">Class Extension</a>
   * <a href="#class-extension-mixin">Class Extension Mixin</a>
+  * <a href="#class-instance-variable">Class Instance Variable</a>
 
 ### Argument Array
 Collapse a list of arguments into an array.
@@ -86,4 +87,17 @@ class C
 end
 
 C.my_method #=> "a class method"
+```
+### Class Instance Variable
+Store class-level state in an instance variable of the `Class` object.
+```ruby
+Class C
+  @my_class_instance_variable = "some value"
+  
+  def self.class_attribute
+    @my_class_instance_variable
+  end
+end
+
+C.class_attribute #=> "some value"
 ```
