@@ -16,7 +16,6 @@ end
 
 my_method('abc', 'xyz', '123') #=> ["cba", "zyx", "321"]
 ```
-<a name="around-alias"></a>
 ### Around Alias
 Call the previous, aliased version of a method from a redeﬁned method.
 ```ruby
@@ -30,7 +29,6 @@ end
 
 "abc".reverse #=> "xcbax"
 ```
-<a name="blank-slate"></a>
 ### Blank Slate
 Remove methods from an object to turn them into <a href="#ghost-methods">Ghost Methods</a>.
 ```ruby
@@ -51,7 +49,6 @@ end
 
 obj.to_s #=> "a Ghost Method"
 ```
-<a name="class-extension"></a>
 ### Class Extension
 Define class methods by mixing a module into a class's eigenclass (a special case of <a href="#object-extension">Object Extension</a>).
 ```ruby
@@ -69,8 +66,6 @@ end
 
 C.my_method #=> "a class method"
 ```
-
-<a name="class-extension-mixin"></a>
 ### Class Extension Mixin
 Enable a module to extend it's includer through a <a href="#hook-method">Hook Method</a>.
 ```ruby
