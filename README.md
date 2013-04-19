@@ -1,12 +1,13 @@
 Metaprogramming Spells
 ===========
-All the spells from <a href="https://twitter.com/nusco">Paolo Perrotta's</a> <i><a href="http://pragprog.com/book/ppmetr/metaprogramming-ruby">Metaprogramming Ruby</a></i>.
+[IN PROGRESS] All the spells from <a href="https://twitter.com/nusco">Paolo Perrotta's</a> <i><a href="http://pragprog.com/book/ppmetr/metaprogramming-ruby">Metaprogramming Ruby</a></i>.
   * <a href="#argument-array">Argument Array</a>
   * <a href="#around-alias">Around Alias</a>
   * <a href="#blank-slate">Blank Slate</a>
   * <a href="#class-extension">Class Extension</a>
   * <a href="#class-extension-mixin">Class Extension Mixin</a>
   * <a href="#class-instance-variable">Class Instance Variable</a>
+  * <a href="#class-macro">Class Macro</a>
 
 ### Argument Array
 Collapse a list of arguments into an array.
@@ -100,4 +101,19 @@ Class C
 end
 
 C.class_attribute #=> "some value"
+```
+### Class Macro
+Use a class method in a class definition.
+```ruby
+class C; end
+
+class << C
+  def my_macro(arg)
+    "my_macro(#{arg}) called"
+  end
+end
+
+class C
+  my_macro :x # => "my_macro(x) called"
+end
 ```
