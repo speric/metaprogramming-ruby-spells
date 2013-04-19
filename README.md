@@ -6,6 +6,7 @@ All the spells from <a href="https://twitter.com/nusco">Paolo Perrotta's</a> <i>
   * <a href="#blank-slate">Blank Slate</a>
   * <a href="#class-extension">Class Extension</a>
   * <a href="#class-extension-mixin">Class Extension Mixin</a>
+
 <a name="argument-array"></a>
 ### Argument Array
 Collapse a list of arguments into an array.
