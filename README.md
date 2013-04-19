@@ -47,3 +47,21 @@ end
 
 obj.to_s #=> "a Ghost Method"
 ```
+<a name="class-extension"></a>
+### Class Extension
+Define class methods by mixing a module into a class's eigenclass (a special case of <a href="#object-extension">Object Extension</a>).
+```ruby
+class C; end
+
+module M
+  def my_method
+    'a class method'
+  end
+end
+
+class << C
+  include M
+end
+
+C.my_method #=> "a class method"
+```
