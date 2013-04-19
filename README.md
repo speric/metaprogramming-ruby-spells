@@ -1,7 +1,12 @@
 Metaprogramming Spells
 ===========
 All the spells from <a href="https://twitter.com/nusco">Paolo Perrotta's</a> <i><a href="http://pragprog.com/book/ppmetr/metaprogramming-ruby">Metaprogramming Ruby</a></i>.
-
+  * <a href="#argument-array">Argument Array</a>
+  * <a href="#around-alias">Around Alias</a>
+  * <a href="#blank-slate">Blank Slate</a>
+  * <a href="#class-extension">Class Extension</a>
+  * <a href="#class-extension-mixin">Class Extension Mixin</a>
+  
 <a name="argument-array"></a>
 ### Argument Array
 Collapse a list of arguments into an array.
