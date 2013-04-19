@@ -8,6 +8,10 @@ Metaprogramming Spells
   * <a href="#class-extension-mixin">Class Extension Mixin</a>
   * <a href="#class-instance-variable">Class Instance Variable</a>
   * <a href="#class-macro">Class Macro</a>
+  * <a href="#clean-room">Clean Room</a>
+  * <a href="#code-processor">Code Processor</a>
+  * <a href="#context-probe">Context Probe</a>
+  * <a href="#deferred-evaluation">Deferred Evaluation</a>
 
 ### Argument Array
 Collapse a list of arguments into an array.
@@ -116,4 +120,56 @@ end
 class C
   my_macro :x # => "my_macro(x) called"
 end
+```
+### Clean Room
+Use an object as an environment in which to evaluate a block.
+```ruby
+class CleanRoom
+  def a_useful_method(x); x * 2; end
+end
+
+CleanRoom.new.instance_eval { a_useful_method(3) } #=> 6
+```
+### Code Processor
+Process <a href="#strings-of-code">Strings of Code</a> from an external source.
+```ruby
+File.readlines("a_file_containing_lines_of_ruby.txt" ).each do |line|
+  puts "#{line.chomp} ==> #{eval(line)}"
+end
+
+# >> 1 + 1 ==> 2
+# >> 3 * 2 ==> 6
+# >> Math.log10(100) ==> 2.0
+```
+### Context Probe
+Execute a block to access information in an object’s context.
+```ruby
+class C
+  def initialize
+    @x = "a private instance variable"
+  end
+end
+
+obj = C.new
+obj.instance_eval { @x } #=> "a private instance variable"
+```
+### Deferred Evaluation
+Store a piece of code and its context in a proc or lambda for evaluation later.
+```ruby
+class C
+  def store(&block)
+    @my_code_capsule = block
+  end
+  
+  def execute
+    @my_code_capsule.call
+  end
+end
+
+obj = C.new
+obj.store { $X = 1 }
+$X = 0
+
+obj.execute
+$X #=> 1
 ```
