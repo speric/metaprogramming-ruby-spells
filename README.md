@@ -11,3 +11,15 @@ end
 
 my_method('abc', 'xyz', '123') #=> ["cba", "zyx", "321"]
 ```
+
+### Around Alias
+Call the previous, aliased version of a method from a redeﬁned method.
+```ruby
+class String
+  alias :old_reverse :reverse
+
+  def reverse
+    "x#{old_reverse}x"
+  end
+end
+"abc".reverse #=> "xcbax"
