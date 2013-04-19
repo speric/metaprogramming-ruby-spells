@@ -22,4 +22,5 @@ class String
     "x#{old_reverse}x"
   end
 end
+
 "abc".reverse #=> "xcbax"
