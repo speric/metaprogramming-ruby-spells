@@ -12,6 +12,7 @@ Metaprogramming Spells
   * <a href="#code-processor">Code Processor</a>
   * <a href="#context-probe">Context Probe</a>
   * <a href="#deferred-evaluation">Deferred Evaluation</a>
+  * <a href="#dynamic-dispatch">Dynamic Dispatch</a>
 
 ### Argument Array
 Collapse a list of arguments into an array.
@@ -172,4 +173,12 @@ $X = 0
 
 obj.execute
 $X #=> 1
+```
+### Dynamic Dispatch
+Decide which method to call at runtime.
+```ruby
+method_to_call = :reverse
+obj = "abc"
+
+obj.send(method_to_call) # => "cba"
 ```
